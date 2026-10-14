@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My First Page</title>
+  <style>
+    /* --- Your External CSS Merged Here --- */
+    {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    p {
+        color: rgb(47, 47, 206);
+        font-size: 20px; 
+        margin: 10px;  
+    }
+
+    h1 {
+        color: chartreuse;
+        font-size: 20px;
+        text-align: center;
+        margin-bottom: 24px;
+        font-weight: 700;
+    }
+
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f4f7f6;
+        color: #333333;
+        line-height: 1.6;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    .container {
+        background: #ffffff;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
+        width: 100%;
+    }
+
+    p {
+        transition: transform 0.2s ease, color 0.2s ease;
+    }
+
+    p:hover {
+        color: rgb(20, 20, 150);
+        transform: scale(1.02);
+        cursor: pointer;
+    }
+
+    /* --- Your Original Inline CSS --- */
+    .dark-theme {
+      background-color: #222;
+      color: #fff;
+    }
+    .dark-theme a {
+      color: #add8e6;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Wrapped content inside a container class to match your CSS design -->
+  <div class="container">
+    <h1 id="title">try garduim na</h1>
+    
+    <!-- Using a live placeholder image since 'try.jpg' is local to your machine -->
+    <img src="https://picsum.photos" alt="Try Image" style="max-width:100%; border-radius:8px; margin-bottom:15px;">
+    
+    <p>Trying out JavaScript hahaha</p>
+    
+    <ul id="myList">
+      <li>Item 1</li>
+      <li>Item 2</li>
+    </ul>
+
+    <a href="https://www.saitama-cmcc.ac.jp/">College Website</a>
+
+    <br><br>
+
+    <button onclick="changeTitle()">Click me!</button>
+    <button onclick="sayHello()">Say Hello</button>
+
+    <hr style="margin: 20px 0; width: 100%;">
+    
+    <h3>New Interactive Features:</h3>
+    <button onclick="toggleDarkMode()">Toggle Dark Mode 🌙</button>
+    
+    <br><br>
+    <input type="text" id="itemInput" placeholder="Type a new item here...">
+    <button onclick="addItem()">Add to List</button>
+  </div>
+
+  <script>
+    function changeTitle() {
+      document.getElementById("title").innerText = "Hello from JavaScript!";
+    }
+    
+    function sayHello() {
+      alert("Hello! Welcome to my website 😊");
+    }
+
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark-theme");
+    }
+
+    function addItem() {
+      let input = document.getElementById("itemInput");
+      let itemText = input.value.trim();
+      
+      if (itemText !== "") {
+        let li = document.createElement("li");
+        li.innerText = itemText;
+        document.getElementById("myList").appendChild(li);
+        input.value = "";
+      } else {
+        alert("Please type something first!");
+      }
+    }
+  </script>
+</body>
+</html>
